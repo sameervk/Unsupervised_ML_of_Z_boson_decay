@@ -9,8 +9,8 @@ Data link: [http://opendata.cern.ch/record/545](http://opendata.cern.ch/record/5
 * Scaler: MinMaxScaler
 
 #### KMeans
-![](v1-pca_kmeans_4_no_cat_pred.png) | ![](v1-sil_kmeans_4_no_cat_pred.png)
+![](images\v1-pca_kmeans_4_no_cat_pred.png) | ![](images\v1-sil_kmeans_4_no_cat_pred.png)
 
-![](v1-bar_kmeans_4_no_cat_pred.png)
+![](images\v1-bar_kmeans_4_no_cat_pred.png)
 
 
