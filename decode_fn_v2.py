@@ -3,11 +3,15 @@ import numpy as np
 
 def decode_fn_v2(encoded_charge, encoded_type, labels):
     """
-    Decodes the categorical labels into the original features
+    Decodes the onehotencoded categorical labels (charge and type) into the original features
+
+    E.g. if the charges -1 and 1 are decoded as [[0,1],[1,0]] and the types EE, EB as [[0,1],[1,0]],
+    then the decode function decodes the label [0,1,1,0,0,1,0,1] into ['-1','1','EE','EE']
 
     :param encoded_charge: onehotencoder of charge [-1,1]
     :param encoded_type: onehotencoder of type [EB, EE]
     :param labels: onehotencoded array of charge and type. dim=(8,)
+    :return array
     """
 
     cat_list = []
