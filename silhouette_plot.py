@@ -1,7 +1,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.metrics import silhouette_samples
 
 def silhouette_plot(data, predicted_values, title = 'title'):
     
@@ -26,4 +26,5 @@ def silhouette_plot(data, predicted_values, title = 'title'):
     plt.yticks(yticks, labels = cluster_labels+1)
     plt.ylabel('Cluster')
     plt.xlabel('Silhouette Coefficient')
+    plt.title(label = title)
     plt.show()

@@ -1,9 +1,14 @@
 import numpy as np
-from uniforming_func import  uniforming_func
-from decode_fn_v2 import decode_fn_v2
+
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.cluster import KMeans
+
+from uniforming_func import  uniforming_func
+from decode_fn_v2 import decode_fn_v2
+
 
 def barplot_func_v2(training_data, pred_val, n_clusters=2, encoder_charge = OneHotEncoder(), encoder_type = OneHotEncoder(),
                     figsize=(12, 8), bar_width=0.25, textloc=(0.99, 0.2), title='Clustering', title_loc=(0.5, 1)):
@@ -26,8 +31,7 @@ def barplot_func_v2(training_data, pred_val, n_clusters=2, encoder_charge = OneH
     """
 
 
-    unique_elems = [list(np.unique(training_data[:, 16:][pred_val == i], axis=0, return_counts=True))
-                    for i in range(n_clusters)]
+    unique_elems = [list(np.unique(training_data[:, 16:][pred_val == i], axis=0, return_counts=True)) for i in range(n_clusters)]
     # need to convert to list as np.unique returns tuple which is immutable
 
     type_counts = [len(i[1]) for i in unique_elems]
@@ -76,3 +80,21 @@ def barplot_func_v2(training_data, pred_val, n_clusters=2, encoder_charge = OneH
     fig.text(x=textloc[0], y=textloc[1], s=fig_text)
     fig.tight_layout()
     plt.show()
+
+if __name__=='__main__':
+
+    onehot_charge = OneHotEncoder(categories='auto', sparse=False)
+    enc_charge = onehot_charge.fit(np.array([[-1],[1]]))
+
+    onehot_type = OneHotEncoder()
+    enc_type = onehot_type.fit(np.array([['EE'],['EB']]))
+
+    scaled_data = np.load('scaled_traindata.npz', allow_pickle=True, mmap_mode='r')
+    train_data = scaled_data.get('scaled_data')
+
+
+    n_clusters = 5
+    predicted_labels = KMeans(n_clusters=n_clusters, n_jobs=3).fit_predict(train_data[:,:16])
+
+    barplot_func_v2(training_data=train_data, pred_val=predicted_labels, n_clusters=n_clusters,
+                    encoder_charge=enc_charge, encoder_type=enc_type, bar_width=0.15, title='KMeans(n=5) no cat. predictors')
