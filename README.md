@@ -10,10 +10,16 @@ Data link: [http://opendata.cern.ch/record/545](http://opendata.cern.ch/record/5
 
 #### KMeans
 
-<img src="/images/v1-pca_kmeans_4_no_cat_pred.png" alt="drawing" width="200"/> | <img src="/images/v1-sil_kmeans_4_no_cat_pred.png" alt="drawing" width="200"/>
+<img src="/images/v1-pca_kmeans_4_no_cat_pred.png" alt="drawing" width="600"/> <img src="/images/v1-sil_kmeans_4_no_cat_pred.png" alt="drawing" width="300"/>
 
 
-<img src="/images/v1-bar_kmeans_4_no_cat_pred.png" alt="drawing" width="500"/>
+<img src="/images/v1-bar_kmeans_4_no_cat_pred.png" alt="drawing" width="800"/>
 
+#### DBSCAN
 
+<img src="/images/v1-bar_dbscan_2_no_cat_pred.png" alt="drawing" width="800"/>
+
+#### MeanShift
+
+<img src="/images/v1-pca_meanshift_2_no_cat_pred.png" alt="drawing" width="600"/>
 
