@@ -11,6 +11,7 @@ Data link: [http://opendata.cern.ch/record/545](http://opendata.cern.ch/record/5
 #### KMeans
 ![](/images/v1-pca_kmeans_4_no_cat_pred.png) | ![](/images/v1-sil_kmeans_4_no_cat_pred.png)
 
-![](/images/v1-bar_kmeans_4_no_cat_pred.png)
+![](/images/v1-bar_kmeans_4_no_cat_pred.png) <!-- .element height="50%" width="50%" -->
+
 
 
